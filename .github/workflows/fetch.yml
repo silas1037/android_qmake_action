@@ -1,0 +1,19 @@
+name: fetch something
+
+on:
+  #push:
+  workflow_dispatch:
+
+jobs:
+
+  FetchIt:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Fetch
+      run: |
+        wget https://web.archive.org/web/20140314141711/http://www.noctua-software.com/static/stellarium-mobile/stellarium-mobile-1.10.tar.gz
+    - uses: actions/upload-artifact@v1
+      with:
+        name: artifacts
+        path: ./

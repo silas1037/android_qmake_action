@@ -1,0 +1,21 @@
+name: fetch something
+
+on:
+  #push:
+  workflow_dispatch:
+
+jobs:
+
+  FetchIt:
+    runs-on: windows-2019
+
+    steps:
+    - name: Fetch
+      run: |
+        git clone https://github.com/KDAB/android_openssl.git ../android_openssl
+        ls ../android_openssl -R
+        #Invoke-WebRequest https://web.archive.org/web/20140314141711/http://www.noctua-software.com/static/stellarium-mobile/stellarium-mobile-1.10.tar.gz -OutFile .\stellarium-mobile-1.10.tar.gz
+    - uses: actions/upload-artifact@v1
+      with:
+        name: Art
+        path: ./

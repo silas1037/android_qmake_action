@@ -1,0 +1,24 @@
+name: clone something
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  FetchIt:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Fetch
+      run: | # --branch v0.20.4
+        git clone --branch master --depth 1 https://github.com/Stellarium/stellarium.git
+    - name: 7z
+      run: |
+          7z a pack.7z ./stellarium/.git
+    - uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Test Pack"
+          files: |
+            ./pack.7z
