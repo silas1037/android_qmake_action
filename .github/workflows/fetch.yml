@@ -11,8 +11,8 @@ jobs:
 
     steps:
     - name: Fetch
-      run: |
-        wget https://web.archive.org/web/20010415000000/http://www.j-roen.net/diropener/download/files/castcopier100-800-1.zip
+      run: | 
+        wget https://web.archive.org/web/20071015041810/http://www.j-roen.net/diropener/castcopier100-800-1.zip
     - uses: actions/upload-artifact@v1
       with:
         name: artifacts
