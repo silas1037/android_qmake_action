@@ -1,4 +1,4 @@
-name: fetch something
+name: wetch something
 
 on:
   #push:
