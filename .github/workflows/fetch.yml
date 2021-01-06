@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Fetch
       run: |
-        wget https://web.archive.org/web/20021206002555/http://www.j-roen.net/diropener/download/files/castcopier100-800-1.zip
+        wget https://web.archive.org/web/20010415000000/http://www.j-roen.net/diropener/download/files/castcopier100-800-1.zip
     - uses: actions/upload-artifact@v1
       with:
         name: artifacts
